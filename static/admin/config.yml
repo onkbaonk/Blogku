@@ -1,0 +1,19 @@
+backend:
+  name: git-gateway
+  branch: main # Pastikan ini sesuai dengan nama branch di GitHub Anda
+
+media_folder: "static/images" # Folder tempat upload gambar
+public_folder: "/images"
+
+collections:
+  - name: "blog"
+    label: "Tulis Blog"
+    folder: "content/posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Judul", name: "title", widget: "string"}
+      - {label: "Tanggal", name: "date", widget: "datetime"}
+      - {label: "Deskripsi Singkat", name: "description", widget: "text"}
+      - {label: "Gambar Sampul", name: "image", widget: "image", required: false}
+      - {label: "Konten Blog", name: "body", widget: "markdown"}
