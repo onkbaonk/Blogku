@@ -8,6 +8,7 @@ theme = 'PaperMod'
     description = "Berbagi inspirasi dan tutorial"
     author = "admin"
     defaultTheme = "auto" # Otomatis Dark Mode sesuai HP user
+    assets = { disableHLJS = true }
     ShowReadingTime = true
     ShowShareButtons = true
     displayFullLangName = true
@@ -21,6 +22,13 @@ theme = 'PaperMod'
     weight = 10
   [[menu.main]]
     identifier = "admin"
-    name = "Tulis Blog (Admin)"
+    name = "Admin Panel"
     url = "/admin/"
     weight = 20
+  [[menu.main]]
+    identifier = "login"
+    name = "Login / Daftar"
+    url = "#" # Ini akan memicu pop-up Netlify Identity
+    weight = 30
+    pre = "<span onclick='netlifyIdentity.open()'>" # Trik agar tombol ini memicu login
+    post = "</span>"

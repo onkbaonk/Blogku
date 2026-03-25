@@ -1,0 +1,49 @@
+/* Membuat tampilan lebih lega dan tidak menumpuk */
+:root {
+    --content-gap: 30px;
+}
+
+body {
+    line-height: 1.8; /* Jarak antar baris teks lebih renggang */
+    background: #fdfdfd; /* Warna background lebih lembut (tidak putih tajam) */
+}
+
+/* Memperbaiki jarak antar paragraf agar tidak menempel */
+p {
+    margin-bottom: 1.5rem;
+}
+
+/* Responsif Mobile: Padding lebih luas di HP */
+@media screen and (max-width: 768px) {
+    .main {
+        padding: 0 20px;
+    }
+    .post-title {
+        font-size: 28px !important;
+        margin-bottom: 15px;
+    }
+}
+
+/* Mempercantik kotak Komentar agar tidak menempel ke konten */
+#cusdis_thread {
+    margin-top: 50px;
+    padding: 20px;
+    background: #ffffff;
+    border: 1px dashed #ddd;
+    border-radius: 12px;
+}
+
+/* Membuat navigasi menu login terlihat seperti tombol */
+.menu li span {
+    background: #1a1a1a;
+    color: #fff;
+    padding: 5px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.dark .menu li span {
+    background: #eee;
+    color: #1a1a1a;
+}
