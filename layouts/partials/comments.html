@@ -1,17 +1,17 @@
+<div class="interaction-bar" style="border-top: 1px solid #eee; padding-top: 20px; margin-top: 40px;">
+    <div data-lyket-type="like" data-lyket-id="{{ .File.UniqueID }}" data-lyket-namespace="blog" data-lyket-template="twitter"></div>
+</div>
+<script src="https://unpkg.com/@lyket/widget@latest/dist/lyket.js?apiKey=pt_f68f81014a02c525f096287c107297"></script>
+
 <div id="cusdis_thread"
   data-host="https://cusdis.com"
   data-app-id="3fc5db29-ca55-48c9-9198-af502834ee66"
   data-page-id="{{ .File.UniqueID }}"
   data-page-url="{{ .Permalink }}"
-  data-page-title="{{ .Title }}"
-></div>
+  data-page-title="{{ .Title }}">
+</div>
 <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
 
 <style>
-  #cusdis_thread {
-    margin-top: 2rem;
-    padding: 1rem;
-    background: #f9f9f9;
-    border-radius: 8px;
-  }
+  #cusdis_thread { margin-top: 2rem; padding: 1.5rem; background: #fafafa; border-radius: 12px; border: 1px solid #eee; }
 </style>

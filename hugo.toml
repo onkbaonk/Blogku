@@ -1,4 +1,26 @@
-baseURL = 'https://example.org/'
-locale = 'en-us'
-title = 'My New Hugo Project'
-theme = "PaperMod"
+baseURL = 'https://blogku.netlify.app/'
+languageCode = 'id-id'
+title = 'Blogku'
+theme = 'PaperMod'
+
+[params]
+    env = "production"
+    description = "Berbagi inspirasi dan tutorial"
+    author = "admin"
+    defaultTheme = "auto" # Otomatis Dark Mode sesuai HP user
+    ShowReadingTime = true
+    ShowShareButtons = true
+    displayFullLangName = true
+    ShowPostNavLinks = true
+
+[menu]
+  [[menu.main]]
+    identifier = "posts"
+    name = "Semua Artikel"
+    url = "/posts/"
+    weight = 10
+  [[menu.main]]
+    identifier = "admin"
+    name = "Tulis Blog (Admin)"
+    url = "/admin/"
+    weight = 20
