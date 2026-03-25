@@ -1,4 +1,4 @@
-baseURL = 'https://blogku.netlify.app/'
+baseURL = 'https://newbilog.netlify.app/'
 languageCode = 'id-id'
 title = 'Blogku'
 theme = 'PaperMod'
