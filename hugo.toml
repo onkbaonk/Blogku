@@ -29,7 +29,14 @@ theme = 'PaperMod'
   [[menu.main]]
     identifier = "login"
     name = "Login / Daftar"
-    url = "#" # Ini akan memicu pop-up Netlify Identity
+    url = "#"
     weight = 30
-    pre = "<span onclick='netlifyIdentity.open()'>" # Trik agar tombol ini memicu login
+    pre = "<span onclick='netlifyIdentity.open()'>"
+    post = "</span>"
+  [[menu.main]]
+    identifier = "logout-btn"
+    name = "Logout"
+    url = "#"
+    weight = 30
+    pre = "<span class='logged-in-only' onclick='netlifyIdentity.logout()'>"
     post = "</span>"
