@@ -47,3 +47,15 @@ p {
     background: #eee;
     color: #1a1a1a;
 }
+
+/* Membuat area klik tombol Like lebih jelas */
+[data-lyket-type="like"] {
+    cursor: pointer;
+    display: inline-block;
+    padding: 10px;
+    transition: transform 0.2s ease;
+}
+
+[data-lyket-type="like"]:hover {
+    transform: scale(1.2); /* Efek membesar saat disentuh */
+}
