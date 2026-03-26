@@ -163,35 +163,5 @@
         }
     });
 </script>
-<script>
-  const updateNav = (user) => {
-    if (user) {
-      document.body.classList.add('user-is-logged-in');
-      console.log("User login sebagai:", user.email);
-    } else {
-      document.body.classList.remove('user-is-logged-in');
-    }
-  };
 
-  if (window.netlifyIdentity) {
-    // Cek saat pertama kali halaman dimuat
-    window.netlifyIdentity.on("init", user => {
-      updateNav(user);
-    });
-
-    // Cek saat user baru saja login
-    window.netlifyIdentity.on("login", user => {
-      updateNav(user);
-      netlifyIdentity.close();
-      // Redirect ke admin jika mau langsung menulis
-      // window.location.href = "/admin/"; 
-    });
-
-    // Cek saat user logout
-    window.netlifyIdentity.on("logout", () => {
-      updateNav(null);
-      window.location.href = "/";
-    });
-  }
-</script>
 {{- end }}
