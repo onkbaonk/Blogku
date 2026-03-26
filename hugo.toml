@@ -21,22 +21,25 @@ theme = 'PaperMod'
     name = "Semua Artikel"
     url = "/posts/"
     weight = 10
+
   [[menu.main]]
     identifier = "admin"
     name = "Admin Panel"
     url = "/admin/"
     weight = 20
+
   [[menu.main]]
-    identifier = "login"
+    identifier = "login-btn"
     name = "Login / Daftar"
     url = "#"
-    weight = 30
-    pre = "<span onclick='netlifyIdentity.open()'>"
+    weight = 20
+    pre = "<span id='nav-login' onclick='netlifyIdentity.open()'>"
     post = "</span>"
+
   [[menu.main]]
     identifier = "logout-btn"
     name = "Logout"
     url = "#"
     weight = 30
-    pre = "<span class='logged-in-only' onclick='netlifyIdentity.logout()'>"
+    pre = "<span id='nav-logout' onclick='netlifyIdentity.logout()'>"
     post = "</span>"

@@ -19,6 +19,22 @@
         <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
         <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
     </span>
+<script>
+  function checkUser() {
+    const user = netlifyIdentity.currentUser();
+    if (user) {
+      document.body.classList.add('user-logged-in');
+    } else {
+      document.body.classList.remove('user-logged-in');
+    }
+  }
+
+  if (window.netlifyIdentity) {
+    netlifyIdentity.on('init', () => checkUser());
+    netlifyIdentity.on('login', () => { checkUser(); netlifyIdentity.close(); });
+    netlifyIdentity.on('logout', () => { checkUser(); window.location.href = "/"; });
+  }
+</script>
 </footer>
 {{- end }}
 

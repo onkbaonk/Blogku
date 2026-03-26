@@ -59,25 +59,23 @@ p {
 [data-lyket-type="like"]:hover {
     transform: scale(1.2); /* Efek membesar saat disentuh */
 }
-/* Sembunyikan tombol logout secara default */
-.logged-in-only {
-    display: none !important;
+
+/* Keadaan Default: Logout Hilang, Login Muncul */
+#nav-logout { display: none !important; }
+#nav-login { display: inline-block !important; }
+
+/* Jika User Login (Body punya class 'user-logged-in') */
+.user-logged-in #nav-logout { 
+    display: inline-block !important; 
+    background: #ff4757; 
+    color: white; 
+    padding: 2px 10px; 
+    border-radius: 5px;
+}
+.user-logged-in #nav-login { 
+    display: none !important; 
 }
 
-/* Jika user login (class 'logged-in' akan ditambah lewat JS nanti) */
-body.user-is-logged-in .logged-in-only {
-    display: inline-block !important;
-}
-
-body.user-is-logged-in .logged-out-only {
-    display: none !important;
-}
-
-/* Gaya tombol Logout agar berbeda warna (Merah/Gelap) */
-.logged-in-only {
-    background: #e74c3c !important;
-    color: white !important;
-    padding: 5px 12px;
-    border-radius: 20px;
-    cursor: pointer;
-}
+/* Tambahan agar Admin Panel juga sembunyi jika tidak login (Opsional) */
+#nav-admin-panel { display: none !important; }
+.user-logged-in #nav-admin-panel { display: inline-block !important; }
