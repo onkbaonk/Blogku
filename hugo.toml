@@ -33,7 +33,7 @@ theme = 'PaperMod'
     name = "Login / Daftar"
     url = "#"
     weight = 20
-    pre = "<span id='nav-login' onclick='netlifyIdentity.open()'>"
+    pre = "<span id='menu-login' onclick='netlifyIdentity.open()'>"
     post = "</span>"
 
   [[menu.main]]
@@ -41,5 +41,5 @@ theme = 'PaperMod'
     name = "Logout"
     url = "#"
     weight = 30
-    pre = "<span id='nav-logout' onclick='netlifyIdentity.logout()'>"
+    pre = "<span id='menu-logout' onclick='netlifyIdentity.logout()' style='display:none; color:red;'>"
     post = "</span>"

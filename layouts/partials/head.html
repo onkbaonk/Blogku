@@ -192,7 +192,6 @@
     }
 
 </script>
-<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 {{- end }}
 
 {{- partial "extend_head.html" . -}}
@@ -204,3 +203,34 @@
 {{- partial "templates/twitter_cards.html" . }}
 {{- partial "templates/schema_json.html" . }}
 {{- end -}}
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+<style>
+  /* Sembunyikan tombol logout secara default lewat CSS murni */
+  #menu-logout { display: none !important; }
+</style>
+
+<script>
+  // Fungsi untuk mengatur tampilan tombol
+  function handleAuth(user) {
+    const loginBtn = document.getElementById('menu-login');
+    const logoutBtn = document.getElementById('menu-logout');
+    
+    if (user) {
+      if (loginBtn) loginBtn.style.setProperty('display', 'none', 'important');
+      if (logoutBtn) logoutBtn.style.setProperty('display', 'inline-block', 'important');
+    } else {
+      if (loginBtn) loginBtn.style.setProperty('display', 'inline-block', 'important');
+      if (logoutBtn) logoutBtn.style.setProperty('display', 'none', 'important');
+    }
+  }
+
+  // Jalankan pengecekan saat widget identity siap
+  document.addEventListener('DOMContentLoaded', () => {
+    if (window.netlifyIdentity) {
+      netlifyIdentity.on('init', user => handleAuth(user));
+      netlifyIdentity.on('login', user => { handleAuth(user); netlifyIdentity.close(); });
+      netlifyIdentity.on('logout', () => { handleAuth(null); window.location.href = "/"; });
+    }
+  });
+</script>
