@@ -1,6 +1,6 @@
 baseURL = 'https://newbelog.netlify.app/'
 languageCode = 'id-id'
-title = 'Blogku'
+title = 'Blog ku'
 theme = 'PaperMod'
 
 [params]
