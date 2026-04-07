@@ -28,18 +28,18 @@ theme = 'PaperMod'
     url = "/admin/"
     weight = 20
 
-  [[menu.main]]
+[[menu.main]]
     identifier = "login-btn"
     name = "Login / Daftar"
-    url = "#"
+    url = "javascript:netlifyIdentity.open()" # Pemicu langsung lewat URL
     weight = 20
-    pre = "<span id='menu-login' onclick='netlifyIdentity.open()'>"
+    pre = "<span id='menu-login'>"
     post = "</span>"
 
   [[menu.main]]
     identifier = "logout-btn"
     name = "Logout"
-    url = "#"
+    url = "javascript:netlifyIdentity.logout()" # Pemicu langsung lewat URL
     weight = 30
-    pre = "<span id='menu-logout' onclick='netlifyIdentity.logout()' style='display:none; color:red;'>"
+    pre = "<span id='menu-logout'>"
     post = "</span>"
